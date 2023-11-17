@@ -73,6 +73,8 @@
       this.label8 = new System.Windows.Forms.Label();
       this.label7 = new System.Windows.Forms.Label();
       this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+      this.textBoxAvgDemand = new System.Windows.Forms.TextBox();
+      this.label16 = new System.Windows.Forms.Label();
       this.groupBoxParameters.SuspendLayout();
       this.groupBox1.SuspendLayout();
       this.SuspendLayout();
@@ -260,7 +262,7 @@
       // 
       // textBoxTDeviation
       // 
-      this.textBoxTDeviation.Location = new System.Drawing.Point(102, 126);
+      this.textBoxTDeviation.Location = new System.Drawing.Point(119, 126);
       this.textBoxTDeviation.Name = "textBoxTDeviation";
       this.textBoxTDeviation.Size = new System.Drawing.Size(59, 28);
       this.textBoxTDeviation.TabIndex = 7;
@@ -294,7 +296,7 @@
       // 
       // textBoxMuDeviation
       // 
-      this.textBoxMuDeviation.Location = new System.Drawing.Point(102, 62);
+      this.textBoxMuDeviation.Location = new System.Drawing.Point(119, 62);
       this.textBoxMuDeviation.Name = "textBoxMuDeviation";
       this.textBoxMuDeviation.Size = new System.Drawing.Size(59, 28);
       this.textBoxMuDeviation.TabIndex = 3;
@@ -315,6 +317,8 @@
       // 
       // groupBox1
       // 
+      this.groupBox1.Controls.Add(this.textBoxAvgDemand);
+      this.groupBox1.Controls.Add(this.label16);
       this.groupBox1.Controls.Add(this.textBoxTimeToNext);
       this.groupBox1.Controls.Add(this.textBoxStudentsRejected);
       this.groupBox1.Controls.Add(this.label14);
@@ -497,6 +501,23 @@
       this.saveFileDialog.Filter = "Text files|*.txt|All files|*.*";
       this.saveFileDialog.RestoreDirectory = true;
       // 
+      // textBoxAvgDemand
+      // 
+      this.textBoxAvgDemand.Location = new System.Drawing.Point(24, 537);
+      this.textBoxAvgDemand.Name = "textBoxAvgDemand";
+      this.textBoxAvgDemand.ReadOnly = true;
+      this.textBoxAvgDemand.Size = new System.Drawing.Size(176, 28);
+      this.textBoxAvgDemand.TabIndex = 27;
+      // 
+      // label16
+      // 
+      this.label16.AutoSize = true;
+      this.label16.Location = new System.Drawing.Point(20, 510);
+      this.label16.Name = "label16";
+      this.label16.Size = new System.Drawing.Size(220, 20);
+      this.label16.TabIndex = 26;
+      this.label16.Text = "Середнє завантаження:";
+      // 
       // Form1
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -560,6 +581,8 @@
     private System.Windows.Forms.Button buttonRun100000;
     private System.Windows.Forms.TextBox textBoxParallel;
     private System.Windows.Forms.Label label15;
+    private System.Windows.Forms.TextBox textBoxAvgDemand;
+    private System.Windows.Forms.Label label16;
   }
 }
 

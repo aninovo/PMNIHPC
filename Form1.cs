@@ -61,6 +61,7 @@ namespace PMNI
       textBoxStudentsEntered.Text = stats.StudentsEntered.ToString();
       textBoxStudentsReturned.Text = stats.StudentsReturned.ToString();
       textBoxStudentsRejected.Text = stats.StudentsRejected.ToString();
+      textBoxAvgDemand.Text = (stats.TimeWorked / models[0].Time / Model.COMPUTERS).ToString("0.00");
     }
 
     private void outputStats(Model model)
@@ -74,6 +75,7 @@ namespace PMNI
       textBoxStudentsEntered.Text = model.Stats.StudentsEntered.ToString();
       textBoxStudentsReturned.Text = model.Stats.StudentsReturned.ToString();
       textBoxStudentsRejected.Text = model.Stats.StudentsRejected.ToString();
+      textBoxAvgDemand.Text = (model.Stats.TimeWorked / model.Time / Model.COMPUTERS).ToString("0.00");
     }
 
     private Model initModel(int seed = -1)
@@ -239,6 +241,7 @@ namespace PMNI
           writer.WriteLine("Returned = " + model.Stats.StudentsReturned);
           writer.WriteLine("Rejected = " + model.Stats.StudentsRejected);
           writer.WriteLine("Rejection = " + model.Stats.RejectionRate);
+          writer.WriteLine("AvgDemand = " + model.Stats.TimeWorked / model.Time / Model.COMPUTERS);
         }
         if(models.Length > 1)
         {
@@ -249,6 +252,7 @@ namespace PMNI
           writer.WriteLine("Returned = " + avg.StudentsReturned);
           writer.WriteLine("Rejected = " + avg.StudentsRejected);
           writer.WriteLine("Rejection = " + avg.RejectionRate);
+          writer.WriteLine("AvgDemand = " + model.Stats.TimeWorked / model.Time / Model.COMPUTERS);
         }
         writer.Close();
         return true;

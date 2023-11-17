@@ -107,6 +107,7 @@ namespace PMNI
       Queue.Remove(student);
       Working.Add(student);
       Stats.StudentsWorked++;
+      Stats.TimeWorked += student.T;
     }
 
     public bool FreeComputer()
