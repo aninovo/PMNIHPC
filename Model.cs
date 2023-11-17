@@ -7,25 +7,36 @@ namespace PMNI
 {
   internal class Model
   {
+    // 1. Студентський машинний зал, оснащений десятью комп’ютерами і одним принтером,
+    // який обслуговує завдання студентів.
     public const double COMPUTERS = 10;
     public const double PRINTERS = 1;
+    // 2. Студенти приходять з інтервалом μ В ± ΔμВ хв.
+    // і третина з них вимагає використання комп’ютера та принтера, а інші - тільки комп’ютера.
     public double Mu { get; set; }
     public double MuDelta { get; set; }
+    // 3. Допустима чергу в машинному залі становить q людини.
+    // Робота на комп’ютері триває t хв (нормальний закон розподілення). 
+    public double Q { get; set; }
     public double T { get; set; }
     public double TDelta { get; set; }
-    public double Q { get; set; }
+    // 4. a%, що працювали на комп’ютері, повертаються для повторного використання принтера та комп’ютера.
     public double A { get; set; }
+    // Віртуальний сач роботи моделі (хвилин)
     public double Time { get; set; }
+    // Час до приходу наступного студента
     public double TimeToNext { get; set; }
-
+    // Черга студентів
     public List<Student> Queue { get; private set; }
+    // Лист студентів, які працюють у залі на даний момент
     public List<Student> Working { get; private set; }
 
+    // Статистики
     public Stats Stats { get; private set; }
 
     private Random random;
 
-    public Model(double mu, double muDelta, double t, double tDelta, double q, double a)
+    public Model(double mu, double muDelta, double t, double tDelta, double q, double a, int seed = -1)
     {
       Mu = mu;
       T = t; Q = q; A = a;
@@ -34,7 +45,10 @@ namespace PMNI
       Time = 0;
       Queue = new List<Student>();
       Working = new List<Student>();
-      random = new Random();
+      if(seed == -1)
+        random = new Random();
+      else
+        random = new Random(seed);
       TimeToNext = RandomMu();
       Stats = new Stats();
     }

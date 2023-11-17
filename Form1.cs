@@ -76,7 +76,7 @@ namespace PMNI
       textBoxStudentsRejected.Text = model.Stats.StudentsRejected.ToString();
     }
 
-    private Model initModel()
+    private Model initModel(int seed = -1)
     {
       Model model = null;
       try
@@ -90,7 +90,7 @@ namespace PMNI
         q = double.Parse(textBoxQ.Text);
         a = double.Parse(textBoxA.Text);
         // Init a new model
-        model = new Model(mu, muDelta, t, tDelta, q, a);
+        model = new Model(mu, muDelta, t, tDelta, q, a, seed);
       }
       catch (FormatException)
       {
@@ -109,7 +109,8 @@ namespace PMNI
         arr = new Model[n];
         for (int i = 0; i < n; i++)
         {
-          arr[i] = initModel();
+          int seed = DateTime.Now.Millisecond + i;
+          arr[i] = initModel(seed);
         }
       }
       catch (FormatException)

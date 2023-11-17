@@ -33,6 +33,9 @@
       this.label1 = new System.Windows.Forms.Label();
       this.textBoxMu = new System.Windows.Forms.TextBox();
       this.groupBoxParameters = new System.Windows.Forms.GroupBox();
+      this.textBoxParallel = new System.Windows.Forms.TextBox();
+      this.label15 = new System.Windows.Forms.Label();
+      this.buttonRun100000 = new System.Windows.Forms.Button();
       this.buttonSaveFile = new System.Windows.Forms.Button();
       this.buttonRestart = new System.Windows.Forms.Button();
       this.buttonRun10000 = new System.Windows.Forms.Button();
@@ -52,6 +55,7 @@
       this.label2 = new System.Windows.Forms.Label();
       this.timerMain = new System.Windows.Forms.Timer(this.components);
       this.groupBox1 = new System.Windows.Forms.GroupBox();
+      this.textBoxTimeToNext = new System.Windows.Forms.TextBox();
       this.textBoxStudentsRejected = new System.Windows.Forms.TextBox();
       this.label14 = new System.Windows.Forms.Label();
       this.textBoxStudentsEntered = new System.Windows.Forms.TextBox();
@@ -69,10 +73,6 @@
       this.label8 = new System.Windows.Forms.Label();
       this.label7 = new System.Windows.Forms.Label();
       this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-      this.textBoxTimeToNext = new System.Windows.Forms.TextBox();
-      this.buttonRun100000 = new System.Windows.Forms.Button();
-      this.textBoxParallel = new System.Windows.Forms.TextBox();
-      this.label15 = new System.Windows.Forms.Label();
       this.groupBoxParameters.SuspendLayout();
       this.groupBox1.SuspendLayout();
       this.SuspendLayout();
@@ -126,6 +126,33 @@
       this.groupBoxParameters.TabIndex = 2;
       this.groupBoxParameters.TabStop = false;
       this.groupBoxParameters.Text = "Параметри";
+      // 
+      // textBoxParallel
+      // 
+      this.textBoxParallel.Location = new System.Drawing.Point(15, 364);
+      this.textBoxParallel.Name = "textBoxParallel";
+      this.textBoxParallel.Size = new System.Drawing.Size(59, 28);
+      this.textBoxParallel.TabIndex = 20;
+      this.textBoxParallel.Text = "1";
+      // 
+      // label15
+      // 
+      this.label15.AutoSize = true;
+      this.label15.Location = new System.Drawing.Point(12, 336);
+      this.label15.Name = "label15";
+      this.label15.Size = new System.Drawing.Size(184, 20);
+      this.label15.TabIndex = 19;
+      this.label15.Text = "Паралельні моделі:";
+      // 
+      // buttonRun100000
+      // 
+      this.buttonRun100000.Location = new System.Drawing.Point(169, 562);
+      this.buttonRun100000.Name = "buttonRun100000";
+      this.buttonRun100000.Size = new System.Drawing.Size(167, 32);
+      this.buttonRun100000.TabIndex = 18;
+      this.buttonRun100000.Text = "Пуск (100000)";
+      this.buttonRun100000.UseVisualStyleBackColor = true;
+      this.buttonRun100000.Click += new System.EventHandler(this.buttonRun100000_Click);
       // 
       // buttonSaveFile
       // 
@@ -212,7 +239,7 @@
       this.label6.Name = "label6";
       this.label6.Size = new System.Drawing.Size(208, 40);
       this.label6.TabIndex = 10;
-      this.label6.Text = "Процент % студентів, \r\nщо повертаються:";
+      this.label6.Text = "Відсоток % студентів, \r\nщо повертаються:";
       // 
       // textBoxQ
       // 
@@ -314,6 +341,14 @@
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "Модель";
       // 
+      // textBoxTimeToNext
+      // 
+      this.textBoxTimeToNext.Location = new System.Drawing.Point(118, 129);
+      this.textBoxTimeToNext.Name = "textBoxTimeToNext";
+      this.textBoxTimeToNext.ReadOnly = true;
+      this.textBoxTimeToNext.Size = new System.Drawing.Size(82, 28);
+      this.textBoxTimeToNext.TabIndex = 25;
+      // 
       // textBoxStudentsRejected
       // 
       this.textBoxStudentsRejected.Location = new System.Drawing.Point(24, 421);
@@ -402,7 +437,7 @@
       this.label10.Name = "label10";
       this.label10.Size = new System.Drawing.Size(180, 20);
       this.label10.TabIndex = 13;
-      this.label10.Text = "Процент % відмов:";
+      this.label10.Text = "Відсоток % відмов:";
       // 
       // textBoxWorking
       // 
@@ -461,41 +496,6 @@
       this.saveFileDialog.FileName = "experiment";
       this.saveFileDialog.Filter = "Text files|*.txt|All files|*.*";
       this.saveFileDialog.RestoreDirectory = true;
-      // 
-      // textBoxTimeToNext
-      // 
-      this.textBoxTimeToNext.Location = new System.Drawing.Point(118, 129);
-      this.textBoxTimeToNext.Name = "textBoxTimeToNext";
-      this.textBoxTimeToNext.ReadOnly = true;
-      this.textBoxTimeToNext.Size = new System.Drawing.Size(82, 28);
-      this.textBoxTimeToNext.TabIndex = 25;
-      // 
-      // buttonRun100000
-      // 
-      this.buttonRun100000.Location = new System.Drawing.Point(169, 562);
-      this.buttonRun100000.Name = "buttonRun100000";
-      this.buttonRun100000.Size = new System.Drawing.Size(167, 32);
-      this.buttonRun100000.TabIndex = 18;
-      this.buttonRun100000.Text = "Пуск (100000)";
-      this.buttonRun100000.UseVisualStyleBackColor = true;
-      this.buttonRun100000.Click += new System.EventHandler(this.buttonRun100000_Click);
-      // 
-      // textBoxParallel
-      // 
-      this.textBoxParallel.Location = new System.Drawing.Point(15, 364);
-      this.textBoxParallel.Name = "textBoxParallel";
-      this.textBoxParallel.Size = new System.Drawing.Size(59, 28);
-      this.textBoxParallel.TabIndex = 20;
-      this.textBoxParallel.Text = "1";
-      // 
-      // label15
-      // 
-      this.label15.AutoSize = true;
-      this.label15.Location = new System.Drawing.Point(12, 336);
-      this.label15.Name = "label15";
-      this.label15.Size = new System.Drawing.Size(184, 20);
-      this.label15.TabIndex = 19;
-      this.label15.Text = "Паралельні моделі:";
       // 
       // Form1
       // 
